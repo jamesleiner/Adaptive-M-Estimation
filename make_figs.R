@@ -1,3 +1,10 @@
+###################################################################################################
+# Script to be run after running experiments. Assumes results have been saved in a results folder in workin
+# directory. 
+#
+###################################################################################################
+
+
 ## ------------------------------------------------------------
 ## Setup simulation parameters
 ## ------------------------------------------------------------
@@ -9,7 +16,7 @@ library(grid)
 
 
 
-# Simulation parameters
+# Simulation parameters, make sure that this matches the configuration used in run_simulation.R
 sim_params <- expand.grid(
   tau          = c(1.0),
   prob_sample  = c(1.0),
@@ -341,7 +348,7 @@ plot_metric_by_scenario <- function(df, metric_name, is_coverage = FALSE,
   }
 }
 # ==================================================================
-# Original coverage/width
+# Original coverage/width (when using a single indicator per treatment)
 # ==================================================================
 plot_metric_by_scenario(
   df = cover_mean,
@@ -358,7 +365,7 @@ plot_metric_by_scenario(
 )
 
 # ==================================================================
-# Linear versions: coverc_mean, widthc_mean
+# Coverage/width (when using a linear model linking treatment and outcomes)
 # ==================================================================
 plot_metric_by_scenario(
   df = coverc_mean,

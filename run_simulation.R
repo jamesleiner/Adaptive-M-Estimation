@@ -1,4 +1,9 @@
-
+###################################################################################################
+# Script to be submitted as a batch job to run experiments
+#
+# See run_sims.sbatch as an example of how this job is submitted in a SLURM schedule environment
+#
+###################################################################################################
 # Read job array index from command line (used to distribute work across cluster jobs)
 args<-commandArgs(TRUE)
 iter <- as.numeric(args[1])
